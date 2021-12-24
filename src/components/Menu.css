@@ -1,6 +1,7 @@
 .menu-container {
-    width: 20%;
+    width: 15%;
     height: 100%;
+    position: fixed;
 }
 
 .menu-container ul {
@@ -11,22 +12,24 @@
 
 .menu-container ul li {
     width: 220px;
+    padding: 10px;
     border-radius: 5px;
     margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: unset;
-}
-
+ }
+    
 .menu-container ul li span {
     margin-left: 20px;
+    
 }
 
 .menu-container ul li:hover {
-   background-color: #F2F2F2;
-   cursor: pointer;
-   border-bottom-right-radius: 18px;
-   border-bottom-left-radius: 18px;
-   border-top-right-radius: 18px;
-   border-top-left-radius: 18px;
+    background-color: #dadada;
+    cursor: pointer;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 10px;
 }
+

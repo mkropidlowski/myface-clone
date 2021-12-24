@@ -1,5 +1,44 @@
 .chat-container {
-    background-color: cornflowerblue;
-    width: 20%;
+    
+    width: 15%;
     height: 100%;
+    position: fixed;
+    right: 0;
 }
+
+.chat-container ul {
+    padding: 20px;
+    position: relative;
+    right: 0;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.chat-container ul li {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: flex;  
+ }
+    
+.chat-name {
+    margin-left: 20px;
+}
+
+.chat-container ul li img {
+    
+    background: lightgray;
+    border-radius: 50%;
+}
+
+.chat-container ul li:hover {
+    background-color: #dadada;
+    width: 100%;
+    cursor: pointer;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+

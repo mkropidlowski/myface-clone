@@ -6,13 +6,15 @@ import './Home.css'
 
 export default function Home() {
     return (
-        <>
+        <div>
             <Navbar />
             <div className="container">
                 <Menu />
                 <Board />
                 <Chat />
             </div>
-        </>
+                
+        </div>
+    
     )
 }

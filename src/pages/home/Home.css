@@ -1,11 +1,9 @@
 .container {
-    width: 100vw!important;
+    width: 95vw!important;
     margin: 0 auto;
     padding: 0;
     display: flex;
     justify-content: space-between;
     position: relative;
     top:100px;
-    z-index: -1;
-
 }
