@@ -1,0 +1,81 @@
+/* navbar styles */
+.navbar {
+    width: 100vw!important;
+    background: #FFFFFF;
+    padding: 15px 0 15px;
+    box-shadow: 0 3px 3px -3px gray;
+    display: flex;
+    justify-content: space-between;
+    position:fixed;
+    top:0;
+    left: 0;
+    right: 0;
+  }
+
+.title {
+    margin-left: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.4em;
+    cursor: pointer;
+  }
+.search-field {
+    margin-left: 50px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: white;
+    background-image: url('../img/loupe.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;  
+    cursor: pointer;
+  }
+
+.search-field:focus {
+    outline: none;
+  }
+
+.profile-bar {
+    margin-right: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    border-radius: 5px;
+    padding: 3px;   
+}
+
+.user-container:hover {
+    background-color: #F2F2F2;
+    cursor: pointer;
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-top-left-radius: 18px;
+}
+
+.user-name {
+    font-size:1em;
+    
+}
+.logout-btn {
+    position: relative;
+    right: -60px;
+    cursor: pointer;
+}
+
+.photo-profile {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    background-color: gray;
+    border-radius: 50%;
+}

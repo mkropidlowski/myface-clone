@@ -1,0 +1,32 @@
+.menu-container {
+    width: 20%;
+    height: 100%;
+}
+
+.menu-container ul {
+    padding: 20px;
+    margin-left: 30px;
+
+}
+
+.menu-container ul li {
+    width: 220px;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: unset;
+}
+
+.menu-container ul li span {
+    margin-left: 20px;
+}
+
+.menu-container ul li:hover {
+   background-color: #F2F2F2;
+   cursor: pointer;
+   border-bottom-right-radius: 18px;
+   border-bottom-left-radius: 18px;
+   border-top-right-radius: 18px;
+   border-top-left-radius: 18px;
+}

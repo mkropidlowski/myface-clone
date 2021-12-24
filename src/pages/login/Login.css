@@ -1,0 +1,63 @@
+.box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    display: block;
+    width: 250px;
+    text-align: center;
+}
+
+.form-box {
+    width: 100%;
+    margin: 60px auto;       
+}
+
+.form-box label {
+    display: flex;
+    margin: 25px auto; 
+}
+
+.form-box input {
+    font-size: 1em;
+    height: 45px;
+    color: #777;
+    width: 100%;
+    border-radius: 5px;
+    border: 0; 
+    padding-left: 15px;
+}
+
+.form-box input:focus{
+    outline: none;
+    color:black;
+}
+
+.btn {
+    border: none;
+    padding: 10px;
+    width: 100px;
+    border-radius: 4px;
+    background: #1877f2;
+    color:#fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-bottom: 25px;    
+}
+
+.signup-btn {
+    padding-top: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-bottom: 1px solid black; 
+    position: relative;
+    top:70px;
+}
+
+.btn-right-pos
+{
+    position: relative;
+    left:60px;
+}
+ 
