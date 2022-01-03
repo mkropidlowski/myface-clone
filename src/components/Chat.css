@@ -42,3 +42,12 @@
 }
 
 
+@media only screen and (max-width:400px) {
+
+    .chat-container {
+        display: none;
+    }
+
+}
+
+
