@@ -139,11 +139,12 @@ hr {
     height: 0.5px;
     background: gray;
 }
-
+/* ale test */
 
 @media only screen and (max-width:400px) {
  .board-container {
      display: none;
+
  }
 
 }
