@@ -3,10 +3,13 @@ import { useLogout } from "../hooks/useLogout"
 import './Navbar.css'
 import happy from '../img/happy.png'
 import logoutImg from '../img/logout.png'
+import { useAuthContext } from "../hooks/useAuthContext"
+
 
 export default function Navbar() {
 
-    const { logout } = useLogout()
+    const { logout } = useLogout() 
+    const { user } = useAuthContext()
 
 
     return (
@@ -24,7 +27,7 @@ export default function Navbar() {
             <div className="profile-bar">
                 <div className="user-container">
                     <img src={happy} className="photo-profile" alt="happy"/>
-                    <span className="user-name">Michał</span>
+                    <span className="user-name">{ user.displayName }</span>
                 </div>
                     
                     <img src={logoutImg} className="logout-btn" alt="logout" onClick={logout}/>

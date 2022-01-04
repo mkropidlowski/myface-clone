@@ -45,7 +45,7 @@ export default function Login() {
                 {error && <p>{error}</p>}    
                     <p><Link to="/signup" className="signup-btn">Zarejestruj się..</Link></p>
                 
-
+                <p>Dane testowe: test@gmail.com / test1234 lub załóz konto</p>
                 </form>
 
         </div>
