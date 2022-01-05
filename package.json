@@ -1,5 +1,6 @@
 {
-  "name": "https://mkropidlowski.github.io/myface-clone/",
+  "homepage": "https://mkropidlowski.github.io/myface-clone",
+  "name": "myface-clone",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
