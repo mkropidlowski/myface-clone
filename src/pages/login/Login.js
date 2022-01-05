@@ -45,7 +45,7 @@ export default function Login() {
                 {error && <p>{error}</p>}    
                     <p><Link to="/signup" className="signup-btn">Zarejestruj się..</Link></p>
                 
-                <p>Test data: janek@gmail.com / janek1234</p>
+                <p>Test data: janek@gmail.com / janek1234 ;)</p>
                 </form>
 
         </div>
