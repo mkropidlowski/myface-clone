@@ -13,7 +13,8 @@ export default function Home() {
     return (
         <div>
             <Navbar />
-            <NewPostForm />
+
+            <NewPostForm uid={user.uid}/>
             <div className="container">
                 <Menu />
                 <Board uid={user.id}/>

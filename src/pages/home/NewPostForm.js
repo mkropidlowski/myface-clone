@@ -11,16 +11,25 @@ export default function NewPostForm({ uid }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
-        console.log({
-            uid,
-            postText,
-    
+        addDocument({
+          uid, 
+          postText,
+          like_count: 0,
+          comment: 0,
+          
         })
-
-    }
+      }
+    
+      // reset the form fields
+      useEffect(() => {
+        if (response.success) {
+          setPostText('')
+        }
+      }, [response.success])
+    
 
     return (
+    
         <form onSubmit={handleSubmit} className="new-post-form">
             <input 
                 type="text"
@@ -31,5 +40,6 @@ export default function NewPostForm({ uid }) {
             />
             <button className="add-post-btn"> + </button>
         </form>
+      
     )
 }

@@ -4,27 +4,35 @@ import happy from '../img/happy.png'
 import postImg from '../img/post.JPG'
 import likeIcon from '../img/like.png'
 import commentIcon from '../img/comment.png'
-
+import { useCollection } from '../hooks/useCollection'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 export default function Board() {
+    
+    const { user } = useAuthContext()
+    const { document, error } = useCollection('post')
+
     return (
         <div className="board-container">
-            <div className="post">
+            {error && <p>{error}</p>}
+                {/* {document.map((post) => (
+                            
+                <div className="post" key={post.id}>
                     <div className="author-info">
                         <div className="header">
-                        <span><img src={happy} alt="profile" /><span className="profile-name">Michał Kropidłowski</span></span>
+                        <span><img src={happy} alt="profile" /><span className="profile-name"></span></span>
                         <span className="settings-btn">...</span>
                         </div>
                         
-                        <p>Wczoraj 16:00</p>
+                        <p>{post.createdAt}</p>
                     </div>
                     <div className="post-data">
-                        <p className="post-title">Inter dobrze wyszedł na sprzedaży Lukaku</p>
+                        <p className="post-title">{post.postText}</p>
                         <div className="photo">
                             <img src={postImg} alt="post" className="post-photo-size"/>
                         </div>
                     <div className="like-section">
-                        <p><img src={likeIcon} alt="likes" /> 1500 </p> <p>30 komentarzy</p>
+                        <p><img src={likeIcon} alt="likes" /> {post.like_count}</p> <p>{post.comment} komentarzy</p>
                     </div>
                         
                     </div>
@@ -46,83 +54,7 @@ export default function Board() {
                        
                     </>
                 </div>
-
-                {/* ----------------------------------------- */}
-                <div className="post">
-                    <div className="author-info">
-                        <div className="header">
-                        <span><img src={happy} alt="profile" /><span className="profile-name">Jan Kowalski</span></span>
-                        <span className="settings-btn">...</span>
-                        </div>
-                        
-                        <p>Wczoraj 16:00</p>
-                    </div>
-                    <div className="post-data">
-                        <p className="post-title">Inter dobrze wyszedł na sprzedaży Lukaku</p>
-                        <div className="photo">
-                            <img src={postImg} alt="post" className="post-photo-size"/>
-                        </div>
-                    <div className="like-section">
-                        <p><img src={likeIcon} alt="likes" /> 1500 </p> <p>30 komentarzy</p>
-                    </div>
-                        
-                    </div>
-                    <div className="like-comment-section">
-                        <p><img src={likeIcon} alt="likes" /> Lubię to!</p>
-                        <p><img src={commentIcon} alt="likes" /> Komentarz</p>
-                    </div>
-                    <>
-                        <form className="comment-section">
-                            <label><img src={happy} alt="profile" /></label>
-                                <label>
-                                <input 
-                                    type="text"
-                                    className="comment-value"
-                                    placeholder="Napisz komentarz.."
-                                />
-                                </label>
-                        </form>
-                   
-                    </>
-                </div>
-                {/* ----------------------------------------- */}
-                <div className="post">
-                    <div className="author-info">
-                        <div className="header">
-                        <span><img src={happy} alt="profile" /><span className="profile-name">Jan Kowalski</span></span>
-                        <span className="settings-btn">...</span>
-                        </div>
-                        
-                        <p>Wczoraj 16:00</p>
-                    </div>
-                    <div className="post-data">
-                        <p className="post-title">Inter dobrze wyszedł na sprzedaży Lukaku</p>
-                        <div className="photo">
-                            <img src={postImg} alt="post" className="post-photo-size"/>
-                        </div>
-                    <div className="like-section">
-                        <p><img src={likeIcon} alt="likes" /> 1500 </p> <p>30 komentarzy</p>
-                    </div>
-                        
-                    </div>
-                    <div className="like-comment-section">
-                        <p><img src={likeIcon} alt="likes" /> Lubię to!</p>
-                        <p><img src={commentIcon} alt="likes" /> Komentarz</p>
-                    </div>
-                    <>
-                        <form className="comment-section">
-                            <label><img src={happy} alt="profile" /></label>
-                                <label>
-                                <input 
-                                    type="text"
-                                    className="comment-value"
-                                    placeholder="Napisz komentarz.."
-                                />
-                                </label>
-                        </form>
-                     
-                    </>
-                </div>
+                ))} */}
         </div>
         
     )
