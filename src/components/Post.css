@@ -47,6 +47,7 @@
 .post-title {
     margin-bottom: 10px;
     font-size: 1.0em;
+    padding: 15px;
 }
 
 .photo {
@@ -135,9 +136,6 @@ hr {
 
 
 @media only screen and (max-width:400px) {
- .board-container {
-     display: none;
-
- }
+ 
 
 }

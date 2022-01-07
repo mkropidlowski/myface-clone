@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { projectAuth } from '../firebase/config'
 import { useAuthContext } from './useAuthContext'
+import { projectFirestore } from '../firebase/config'
 
 export const useLogin = () => {
     const [isCancelled, setIsCancelled] = useState(false)
@@ -14,6 +15,10 @@ export const useLogin = () => {
     
       try {
         const res = await projectAuth.signInWithEmailAndPassword(email, password)
+
+
+        const documentRef = projectFirestore.collection('users').doc(res.user.uid)
+        await documentRef.update({ online: true })
   
         dispatch({ type: 'LOGIN', payload: res.user })
   

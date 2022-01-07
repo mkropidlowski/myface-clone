@@ -1,37 +1,26 @@
 import './Chat.css'
 import userIcon from '../img/happy.png'
 import dot from '../img/dot.png'
+import { useCollection } from '../hooks/useCollection'
 
 export default function Chat() {
+
+
+    const { data, error } = useCollection('users') 
+
     return (
         <div className="chat-container">
             <h3>Kontakty</h3>
+            {error && <span>{error}</span>}
             <ul>
-                <li>
-                    <span className="icon-circle"><img src={userIcon} alt="user"/><img src={dot} alt="dot" width="7px" height="7px"/></span>
-                    <span className="chat-name">Jan Nowak</span>
-                </li>
-                <li>
-                    <span className="icon-circle"><img src={userIcon} alt="user"/><img src={dot} alt="dot" width="7px" height="7px"/></span>
-                    <span className="chat-name">Adam Adamiak</span>
-                </li>
-                <li>
-                    <span className="icon-circle"><img src={userIcon} alt="user"/><img src={dot} alt="dot" width="7px" height="7px"/></span>
-                    <span className="chat-name">Tomasz Smuda</span>
-                </li>
-                <li>
-                    <span className="icon-circle"><img src={userIcon} alt="user"/></span>
-                    <span className="chat-name">Alex Oslo</span>
-                </li>
-                <li>
-                    <span className="icon-circle"><img src={userIcon} alt="user"/></span>
-                    <span className="chat-name">Karim Benzyna</span>
-                </li>
-                <li>
-                    <span className="icon-circle"><img src={userIcon} alt="user"/><img src={dot} alt="dot" width="7px" height="7px"/></span>
-                    <span className="chat-name">Tomasz Omate</span>
-                </li>
-        
+                {data && data.map(user => (
+                        <li key={user.id}>
+                        <span className="icon-circle"><img src={userIcon} alt="user"/>
+                        {user.online && <img src={dot} alt="dot" width="7px" height="7px"/>}
+                        </span>
+                        <span className="chat-name">{user.displayName}</span>
+                    </li>
+                ))}
             </ul>
         </div>
     )

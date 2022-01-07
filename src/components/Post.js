@@ -20,7 +20,6 @@ export default function Post({newPost}) {
                         <span className="settings-btn">...</span>
                         </div>
                         
-                        <p>16:00</p>
                     </div>
                     
                      <div className="post-data">
