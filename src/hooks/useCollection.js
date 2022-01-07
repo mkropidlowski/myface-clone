@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react"
 import { projectFirestore  } from "../firebase/config"
+import { useAuthContext } from "./useAuthContext"
 
 
 
 export const useCollection = (collection) => {
 
+    const { user } = useAuthContext()
     const [data, setData] = useState(null)
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        let ref = projectFirestore.collection(collection)
+        let ref = projectFirestore.collection(collection).orderBy('createdAt', 'desc')
 
         const unsub = ref.onSnapshot((snapshot) => {
             let result = []
@@ -30,6 +32,6 @@ export const useCollection = (collection) => {
     }, [collection])
 
 
-    return { document, error } 
+    return { data, error } 
     
 }

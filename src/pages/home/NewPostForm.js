@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react'
 import './NewPostForm.css'
 import { useFirestore } from '../../hooks/useFirestore'
+import { useAuthContext } from '../../hooks/useAuthContext'
 
 
 export default function NewPostForm({ uid }) {
 
-
+    const { user } = useAuthContext()
     const [postText, setPostText] = useState('')
     const { addDocument, response } = useFirestore('post')
 
     const handleSubmit = (e) => {
         e.preventDefault()
         addDocument({
+          username: user.displayName,
           uid, 
           postText,
           like_count: 0,

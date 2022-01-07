@@ -29,7 +29,7 @@ export default function Chat() {
                 </li>
                 <li>
                     <span className="icon-circle"><img src={userIcon} alt="user"/><img src={dot} alt="dot" width="7px" height="7px"/></span>
-                    <span className="chat-name">Jajami Omate</span>
+                    <span className="chat-name">Tomasz Omate</span>
                 </li>
         
             </ul>
