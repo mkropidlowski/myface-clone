@@ -4,6 +4,7 @@ import Signup from './pages/signup/Signup';
 import Home from './pages/home/Home'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
+import UserProfile from './components/UserProfile';
 
 function App() {
 
@@ -26,7 +27,10 @@ function App() {
           <Route exact path="/login">
             {user && <Redirect to="/" />}
             {!user && <Login />}
-           
+          </Route>
+          <Route exact path="/userprofile">
+            {user && <UserProfile />}
+            
           </Route>
         </Switch>
         </BrowserRouter>

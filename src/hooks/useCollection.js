@@ -4,7 +4,7 @@ import { useAuthContext } from "./useAuthContext"
 
 
 
-export const useCollection = (collection, _orderBy) => {
+export const useCollection = (collection, _query, _orderBy) => {
 
     const { user } = useAuthContext()
     const [data, setData] = useState(null)
@@ -12,10 +12,14 @@ export const useCollection = (collection, _orderBy) => {
 
    
     const orderBy = useRef(_orderBy).current
+    const query = useRef(_query).current
 
     useEffect(() => {
         let ref = projectFirestore.collection(collection)
 
+        if (query) {
+            ref = ref.orderBy(...query)
+        }
 
         if (orderBy) {
             ref = ref.orderBy(...orderBy)
@@ -37,7 +41,7 @@ export const useCollection = (collection, _orderBy) => {
 
         return () => unsub()
 
-    }, [collection, orderBy])
+    }, [collection, query, orderBy])
 
 
     return { data, error } 

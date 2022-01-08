@@ -9,6 +9,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 export default function Post({newPost}) {
 
     const { user } = useAuthContext()
+    
     return (
         <>
            {newPost.map((post) => (

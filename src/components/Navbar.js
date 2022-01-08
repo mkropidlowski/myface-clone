@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
 import { useLogout } from "../hooks/useLogout"
 import './Navbar.css'
-import happy from '../img/happy.png'
+import man from '../img/man-2.png'
 import logoutImg from '../img/logout.png'
 import { useAuthContext } from "../hooks/useAuthContext"
+
 
 
 export default function Navbar() {
@@ -15,7 +16,9 @@ export default function Navbar() {
     return (
         <nav className="navbar">
             <div className="logo-bar">
+                <Link to={'/'}>
                 <span className="title">_mySpace</span>
+                </Link>
                 <span className="search">
                 <input 
                     type="text"
@@ -25,11 +28,12 @@ export default function Navbar() {
 
             </div>
             <div className="profile-bar">
+                <Link to={'/userprofile'}>
                 <div className="user-container">
-                    <img src={happy} className="photo-profile" alt="happy"/>
+                    <img src={man} className="photo-profile" alt="happy"/>
                     <span className="user-name">{ user.displayName }</span>
                 </div>
-                    
+                </Link> 
                     <img src={logoutImg} className="logout-btn" alt="logout" onClick={logout}/>
                     
             </div>
