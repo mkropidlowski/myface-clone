@@ -1,18 +1,44 @@
 import './Post.css'
 import happy from '../img/happy.png'
-import postImg from '../img/post.JPG'
 import likeIcon from '../img/like.png'
 import commentIcon from '../img/comment.png'
-import { useAuthContext } from '../hooks/useAuthContext'
+import { useEffect, useState } from "react"
+import { projectFirestore  } from "../firebase/config"
 
 
-export default function Post({newPost}) {
+export default function Post() {
+     
+    const [data, setData] = useState(null)
+    const [error, setError] = useState(null)
 
-    const { user } = useAuthContext()
-    
+    useEffect(() => {
+        let ref = projectFirestore.collection('post').orderBy('createdAt', 'desc')
+
+
+        const unsub = ref.onSnapshot((snapshot) => {
+            let result = []
+            snapshot.docs.forEach(doc => {
+                result.push({ ...doc.data(), id: doc.id})
+        
+            })
+        
+        
+            setData(result)
+            setError(null)
+        }, (error) => {
+            setError('Brak danych.')
+        })
+
+
+        return () => unsub()
+
+    }, [])
+
+
     return (
-        <>
-           {newPost.map((post) => (
+         <div className="board-container">
+            {error && <p>{error}</p>}
+           {data && data.map((post) => (
                         
                 <div className="post" key={post.id}>
                     <div className="author-info">
@@ -53,7 +79,7 @@ export default function Post({newPost}) {
                 </div> 
            ))} 
 
-        </>
-        
+        </div>
+                
     )
 }

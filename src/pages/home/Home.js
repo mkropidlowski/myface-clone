@@ -5,6 +5,7 @@ import Chat from "../../components/Chat"
 import './Home.css'
 import NewPostForm from "./NewPostForm"
 import { useAuthContext } from "../../hooks/useAuthContext"
+import Post from "../../components/Post"
 
 export default function Home() {
 
@@ -17,7 +18,7 @@ export default function Home() {
             <NewPostForm uid={user.uid}/>
             <div className="container">
                 <Menu />
-                <Board uid={user.id}/>
+                <Post />
                 <Chat />
             </div>
                 
