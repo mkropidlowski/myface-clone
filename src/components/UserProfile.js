@@ -42,6 +42,10 @@ export default function UserProfile() {
     }, [])
 
 
+    const handleClick = (e) => {
+        console.log(e.target.add.classList('add'))
+    }
+
     return (
         <>
             <Navbar />
@@ -52,7 +56,7 @@ export default function UserProfile() {
                     <span className="user">{ user.displayName }</span>
                     </div>
                     <div className='edit-profile-btn'>
-                        <button className="btn-edit">Edytuj profil</button>
+                        <button className="btn-edit" onClick={handleClick}>Edytuj profil</button>
                     </div>
                 </div>
 
