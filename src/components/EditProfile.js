@@ -1,11 +1,10 @@
 import './EditProfile.css'
 
-
-
-export default function EditProfile() {
+export const EditProfile = ({activePopup, setActivePopup}) => {
     return (
-        <div>
-            hello
-        </div>
+        <>
+        
+            {activePopup ? <div className="popup">Hello</div> : null}
+        </>
     )
 }

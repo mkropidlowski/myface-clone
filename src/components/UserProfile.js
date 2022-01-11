@@ -11,12 +11,15 @@ import man from '../img/man-2.png'
 import happy from '../img/happy.png'
 import likeIcon from '../img/like.png'
 import commentIcon from '../img/comment.png'
+import { EditProfile } from './EditProfile'
 
 export default function UserProfile() {
 
     const { user } = useAuthContext()
     const [data, setData] = useState(null)
     const [error, setError] = useState(null)
+    const [activePopup, setActivePopup] = useState(false)
+
 
     useEffect(() => {
         let ref = projectFirestore.collection('post').where("uid", '==', user.uid)
@@ -41,14 +44,15 @@ export default function UserProfile() {
 
     }, [])
 
-
-    const handleClick = (e) => {
-        console.log(e.target.add.classList('add'))
+    const handleClick = () => {
+        setActivePopup(prev => !prev)
     }
+
 
     return (
         <>
             <Navbar />
+        
             <div className='container-profile'>
                 <div className='header-profile'>
                     <div className="user-info">
@@ -58,7 +62,13 @@ export default function UserProfile() {
                     <div className='edit-profile-btn'>
                         <button className="btn-edit" onClick={handleClick}>Edytuj profil</button>
                     </div>
+
                 </div>
+
+                <div className="popup-container">
+                    <EditProfile activePopup={activePopup} setActivePopup={setActivePopup}/>
+                </div>
+               
 
                 <div className='profile-content'>     
                     <div className='about'>
