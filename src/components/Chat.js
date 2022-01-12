@@ -18,7 +18,7 @@ export default function Chat() {
                         <span className="icon-circle"><img src={userIcon} alt="user"/>
                         {user.online && <img src={dot} alt="dot" width="7px" height="7px"/>}
                         </span>
-                        <span className="chat-name">{user.displayName}</span>
+                        <span className="chat-name">{user.displayName }</span>
                     </li>
                 ))}
             </ul>

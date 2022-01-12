@@ -34,7 +34,7 @@ export default function Navbar() {
                     <span className="user-name">{ user.displayName }</span>
                 </div>
                 </Link> 
-                    <img src={logoutImg} className="logout-btn" alt="logout" onClick={logout}/>
+                 <Link to={'/'}><img src={logoutImg} className="logout-btn" alt="logout" onClick={logout}/></Link>
                     
             </div>
                

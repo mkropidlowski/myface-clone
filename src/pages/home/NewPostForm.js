@@ -32,7 +32,7 @@ export default function NewPostForm({ uid }) {
 
     return (
     
-        <form onSubmit={handleSubmit} className="new-post-form user-profile-style">
+        <form onSubmit={handleSubmit} className="new-post-form">
             <input 
                 type="text"
                 className="input-post-text"

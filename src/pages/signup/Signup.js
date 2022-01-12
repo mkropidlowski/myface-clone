@@ -7,7 +7,7 @@ import { useSignup } from '../../hooks/useSignup'
 export default function Signup() {
     
     const [name, setName] = useState('')
-    // const [surname, setSurname] = useState('')
+    const [surname, setSurname] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const { signup, isPending, error } = useSignup()
@@ -15,7 +15,7 @@ export default function Signup() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        signup(email, password, name)
+        signup(email, password, name, surname)
     }
 
     return (
@@ -31,7 +31,7 @@ export default function Signup() {
                         placeholder="Imię"
                     />
                 </label>
-                {/* <label>
+                <label>
                     <input 
                         type="text"
                         onChange={(e) => setSurname(e.target.value) }
@@ -39,7 +39,7 @@ export default function Signup() {
                         required
                         placeholder="Nazwisko"
                     />
-                </label> */}
+                </label>
                 <label>
                     <input 
                         type="text"

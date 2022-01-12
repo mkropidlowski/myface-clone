@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react"
 import { projectFirestore  } from "../firebase/config"
 
-export const useCollection = (collection, _query, _orderBy) => {
+export const useCollection = (collection, _query) => {
 
     
     const [data, setData] = useState(null)
@@ -9,7 +9,7 @@ export const useCollection = (collection, _query, _orderBy) => {
 
 
     const query = useRef(_query).current
-    const orderBy = useRef(_orderBy).current
+ 
 
 
     useEffect(() => {
@@ -18,11 +18,6 @@ export const useCollection = (collection, _query, _orderBy) => {
         if (query) {
             ref = ref.where(...query)
         } 
-
-        if (orderBy) {
-            ref = ref.orderBy(...orderBy)
-        }
-
 
         const unsub = ref.onSnapshot((snapshot) => {
             let result = []
@@ -41,7 +36,7 @@ export const useCollection = (collection, _query, _orderBy) => {
 
         return () => unsub()
 
-    }, [collection, query, orderBy])
+    }, [collection, query])
 
 
     return { data, error } 

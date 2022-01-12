@@ -18,6 +18,11 @@
     
 }
 
+.user-profile-style {
+    position: relative;
+    top:-100px;
+}
+
 
 .header-profile {
     background-color: rgb(255, 255, 255);
@@ -64,12 +69,18 @@
 }
 
 .profile-content {
-    width: 60%;
+    width: 80%;
     display: flex;
     justify-content: space-evenly;
     margin-top:50px;
-   
 }
+
+.profile-content p {
+    padding: 15px;
+}
+
+
+
  /* POST */ 
 
  

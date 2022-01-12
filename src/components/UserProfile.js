@@ -12,6 +12,7 @@ import happy from '../img/happy.png'
 import likeIcon from '../img/like.png'
 import commentIcon from '../img/comment.png'
 import { EditProfile } from './EditProfile'
+import UserAbout from './UserAbout'
 
 export default function UserProfile() {
 
@@ -20,10 +21,10 @@ export default function UserProfile() {
     const [error, setError] = useState(null)
     const [activePopup, setActivePopup] = useState(false)
 
+    console.log(user)
 
     useEffect(() => {
         let ref = projectFirestore.collection('post').where("uid", '==', user.uid)
-
 
         const unsub = ref.onSnapshot((snapshot) => {
             let result = []
@@ -32,18 +33,17 @@ export default function UserProfile() {
         
             })
         
-        
             setData(result)
             setError(null)
         }, (error) => {
             setError('Brak danych.')
         })
 
-
         return () => unsub()
 
     }, [])
 
+    
     const handleClick = () => {
         setActivePopup(prev => !prev)
     }
@@ -71,22 +71,16 @@ export default function UserProfile() {
                
 
                 <div className='profile-content'>     
-                    <div className='about'>
-                        <h2>O sobie</h2>
-                        <p>Miejsce zamieszkania:</p>
-                        <p>Hobby: </p>
-                        <p>Wykształcenie:</p>
-                        
-                    </div>        
-                    <div className='profile-post'>
+                    <UserAbout />
 
-                    
+                    <div className='profile-post'>
 
                 {error && <p>{error}</p>}
             <div className="user-board-container">
-
-             <NewPostForm uid={user.uid}/>
-
+                <div className="user-profile-style">
+                    <NewPostForm uid={user.uid}/>
+                </div>
+                
                 {data && data.map((post) => (
                         
                 <div className="post" key={post.id}>
