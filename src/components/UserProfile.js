@@ -13,6 +13,8 @@ import likeIcon from '../img/like.png'
 import commentIcon from '../img/comment.png'
 import { EditProfile } from './EditProfile'
 import UserAbout from './UserAbout'
+import { useCollection } from '../hooks/useCollection'
+
 
 export default function UserProfile() {
 
@@ -20,9 +22,12 @@ export default function UserProfile() {
     const [data, setData] = useState(null)
     const [error, setError] = useState(null)
     const [activePopup, setActivePopup] = useState(false)
+    const { userdata } = useCollection(
+        'users', ['displayName', '==', user.displayName]
+    ) 
 
-    console.log(user)
 
+    
     useEffect(() => {
         let ref = projectFirestore.collection('post').where("uid", '==', user.uid)
 
@@ -52,12 +57,18 @@ export default function UserProfile() {
     return (
         <>
             <Navbar />
-        
+          
+
+         
             <div className='container-profile'>
                 <div className='header-profile'>
                     <div className="user-info">
                     <img src={man} className="photo" alt="happy"/>
-                    <span className="user">{ user.displayName }</span>
+
+                    {userdata && userdata.map(user => (
+                        <span key={user.id} className="user">{ user.displayName } {user.surname }</span>       
+                    ))}
+
                     </div>
                     <div className='edit-profile-btn'>
                         <button className="btn-edit" onClick={handleClick}>Edytuj profil</button>

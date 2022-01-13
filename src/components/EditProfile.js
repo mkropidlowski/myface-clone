@@ -11,6 +11,7 @@ export const EditProfile = ({activePopup, setActivePopup}) => {
     const [school, setSchool] = useState('')
     const [age, setAge] = useState('')
     const { updateProfile, isPending, error } = useProfileUpdate()
+  
 
     const useSubmitUpdate = (e) => {
         e.preventDefault()

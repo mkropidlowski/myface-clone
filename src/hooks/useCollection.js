@@ -4,7 +4,7 @@ import { projectFirestore  } from "../firebase/config"
 export const useCollection = (collection, _query) => {
 
     
-    const [data, setData] = useState(null)
+    const [userdata, setData] = useState(null)
     const [error, setError] = useState(null)
 
 
@@ -39,6 +39,6 @@ export const useCollection = (collection, _query) => {
     }, [collection, query])
 
 
-    return { data, error } 
+    return { userdata, error } 
     
 }

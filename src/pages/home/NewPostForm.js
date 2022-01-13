@@ -4,11 +4,13 @@ import { useFirestore } from '../../hooks/useFirestore'
 import { useAuthContext } from '../../hooks/useAuthContext'
 
 
+
 export default function NewPostForm({ uid }) {
 
     const { user } = useAuthContext()
     const [postText, setPostText] = useState('')
     const { addDocument, response } = useFirestore('post')
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -18,7 +20,7 @@ export default function NewPostForm({ uid }) {
           postText,
           like_count: 0,
           comment: 0,
-          
+         
         })
       }
     

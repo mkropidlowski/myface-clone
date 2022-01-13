@@ -26,7 +26,8 @@ export const useSignup = () => {
 
         await projectFirestore.collection('users').doc(res.user.uid).set({ 
             online: true,
-            displayName: name + ' ' + surname,
+            displayName: name,
+            surname,
           })
 
         // dispatch login action 
