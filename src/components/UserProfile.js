@@ -53,13 +53,10 @@ export default function UserProfile() {
         setActivePopup(prev => !prev)
     }
 
-
     return (
         <>
             <Navbar />
-          
-
-         
+        
             <div className='container-profile'>
                 <div className='header-profile'>
                     <div className="user-info">
@@ -97,7 +94,7 @@ export default function UserProfile() {
                 <div className="post" key={post.id}>
                     <div className="author-info">
                         <div className="header">
-                        <span><img src={happy} alt="profile" /><span className="profile-name">{post.username}</span></span>
+                        <span><img src={happy} alt="profile" /><span className="profile-name">{post.username} {post.actuallSurname}</span></span>
                         <span className="settings-btn">...</span>
                         </div>
                         

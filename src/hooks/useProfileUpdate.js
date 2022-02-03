@@ -17,7 +17,7 @@ export const useProfileUpdate = () => {
 
     try {
       
-        await projectFirestore.collection('users').doc(user.uid).set({ 
+        await projectFirestore.collection('users').doc(user.uid).update({ 
             user_id: user.uid,
             online: true,
             displayName: user.displayName,

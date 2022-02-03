@@ -13,7 +13,7 @@ export default function Menu() {
     return (
         <div className="menu-container">
            <ul>
-               <Link to={'/userprofile'}><li><img src={beard} alt="profile"/><span className="hover-test">{user.displayName}</span></li></Link>
+               <Link to={`/userprofile/${user.uid}`}><li><img src={beard} alt="profile"/><span className="hover-test">{user.displayName}</span></li></Link>
                <li><img src={frieds} alt="friends"/><span>Znajomi</span></li>
                <li><img src={group} alt="group"/><span>Grupy</span></li>
                <li><img src={save} alt="save"/><span>Zapisane</span></li>

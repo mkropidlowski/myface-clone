@@ -28,7 +28,7 @@ function App() {
             {user && <Redirect to="/" />}
             {!user && <Login />}
           </Route>
-          <Route exact path="/userprofile">
+          <Route exact path={`/userprofile/${user.uid}`}>
             {user && <UserProfile />}
             
           </Route>

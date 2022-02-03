@@ -2,20 +2,30 @@ import { useState, useEffect } from 'react'
 import './NewPostForm.css'
 import { useFirestore } from '../../hooks/useFirestore'
 import { useAuthContext } from '../../hooks/useAuthContext'
-
-
+import { useCollection } from '../../hooks/useCollection'
 
 export default function NewPostForm({ uid }) {
 
     const { user } = useAuthContext()
     const [postText, setPostText] = useState('')
     const { addDocument, response } = useFirestore('post')
+  
+    const { userdata } = useCollection(
+      'users', ['displayName', '==', user.displayName]
+    ) 
 
+    let actuallSurname = []
+    userdata && userdata.forEach(data => {
+      actuallSurname = data.surname
+    })
+   
+   
 
     const handleSubmit = (e) => {
         e.preventDefault()
         addDocument({
           username: user.displayName,
+          actuallSurname,
           uid, 
           postText,
           like_count: 0,
@@ -26,14 +36,18 @@ export default function NewPostForm({ uid }) {
     
       // reset the form fields
       useEffect(() => {
+      
         if (response.success) {
           setPostText('')
+         
         }
       }, [response.success])
     
 
     return (
     
+
+      
         <form onSubmit={handleSubmit} className="new-post-form">
             <input 
                 type="text"
@@ -43,6 +57,8 @@ export default function NewPostForm({ uid }) {
                 value={postText}
             />
             <button className="add-post-btn"> + </button>
+       
+  
         </form>
       
     )

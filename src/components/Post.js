@@ -43,7 +43,7 @@ export default function Post() {
                 <div className="post" key={post.id}>
                     <div className="author-info">
                         <div className="header">
-                        <span><img src={happy} alt="profile" /><span className="profile-name">{post.username}</span></span>
+                        <span><img src={happy} alt="profile" /><span className="profile-name">{post.username} {post.actuallSurname} </span></span>
                         <span className="settings-btn">...</span>
                         </div>
                         
