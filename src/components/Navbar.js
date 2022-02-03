@@ -28,7 +28,7 @@ export default function Navbar() {
 
             </div>
             <div className="profile-bar">
-                <Link to={`/userprofile/${user.uid}`}>
+                <Link to={'/userprofile'}>
                 <div className="user-container">
                     <img src={man} className="photo-profile" alt="happy"/>
                     <span className="user-name">{ user.displayName }</span>

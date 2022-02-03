@@ -28,9 +28,10 @@ function App() {
             {user && <Redirect to="/" />}
             {!user && <Login />}
           </Route>
-          <Route exact path={`/userprofile/${user.uid}`}>
+          <Route exact path="/userprofile">
             {user && <UserProfile />}
-            
+            {!user && <UserProfile />}
+          
           </Route>
         </Switch>
         </BrowserRouter>
