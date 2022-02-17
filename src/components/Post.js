@@ -4,13 +4,14 @@ import likeIcon from '../img/like.png'
 import commentIcon from '../img/comment.png'
 import { useEffect, useState } from "react"
 import { projectFirestore  } from "../firebase/config"
+import { PostComments } from "./PostComments"
 
 
 export default function Post() {
      
     const [data, setData] = useState(null)
     const [error, setError] = useState(null)
-
+   
     useEffect(() => {
         let ref = projectFirestore.collection('post').orderBy('createdAt', 'desc')
 
@@ -40,6 +41,7 @@ export default function Post() {
             {error && <p>{error}</p>}
            {data && data.map((post) => (
                         
+                      
                 <div className="post" key={post.id}>
                     <div className="author-info">
                         <div className="header">
@@ -51,31 +53,29 @@ export default function Post() {
                     
                      <div className="post-data">
                         <p className="post-title">{post.postText}</p>
-                        {/* <div className="photo">
-                            <img src={postImg} alt="post" className="post-photo-size"/>
-                        </div> */}
+                   
                     <div className="like-section">
-                        <p><img src={likeIcon} alt="likes" /> {post.like_count}</p> <p>{post.comment} komentarzy</p>
+                        <p><img src={likeIcon} alt="likes" /> {post.like_count}</p> <p>{post.message.length} komentarzy</p>
                     </div>
                         
                     </div>
-                    <div className="like-comment-section">
-                        <p><img src={likeIcon} alt="likes" /> Lubię to!</p>
-                        <p><img src={commentIcon} alt="likes" /> Komentarz</p>
-                    </div>
-                    <>
-                        <form className="comment-section">
-                            <label><img src={happy} alt="profile" /></label>
-                                <label>
-                                <input 
-                                    type="text"
-                                    className="comment-value"
-                                    placeholder="Napisz komentarz.."
-                                />
-                                </label>
-                        </form>
+                   
+                    <div className="comment-section-post">
+                      
+                           {post.message?.map((list, index) => (
+                            <div className="comment-container" key={index}>
+                            <p className="comment-username">{list.comment_username}: </p>
+                            <p className="comment-text">{list.comment}</p>
+                           </div>
+                        
+                         ))}
+                 
+                           
                        
-                    </>
+                    </div>
+                    <div>
+                       <PostComments postKey={post.id} document={post.message}/> 
+                    </div>
                 </div> 
            ))} 
 

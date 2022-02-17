@@ -30,6 +30,7 @@ export default function NewPostForm({ uid }) {
           postText,
           like_count: 0,
           comment: 0,
+          message: []
          
         })
       }

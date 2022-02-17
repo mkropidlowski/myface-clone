@@ -1,5 +1,4 @@
 import Navbar from "../../components/Navbar"
-import Menu from "../../components/Menu"
 import Chat from "../../components/Chat"
 import './Home.css'
 import NewPostForm from "./NewPostForm"
@@ -16,7 +15,7 @@ export default function Home() {
 
             <NewPostForm uid={user.uid}/>
             <div className="container">
-                <Menu />
+                
                 <Post />
                 <Chat />
             </div>

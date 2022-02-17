@@ -1,17 +1,9 @@
-.chat-container {
-    
-    width: 15%;
-    height: 100%;
-    position: fixed;
-    margin-top:-30px;
-    right: 20px;
-}
 
 .chat-container ul {
     padding: 20px;
     position: relative;
     right: 0;
-    width: 350px;
+    width: 250px;
     display: flex;
     flex-direction: column;
   

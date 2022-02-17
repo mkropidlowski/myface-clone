@@ -20,23 +20,7 @@
     font-size: 1.4em;
     cursor: pointer;
   }
-.search-field {
-    margin-left: 50px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 15px;
-    background-color: white;
-    background-image: url('../img/loupe.png');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;  
-    cursor: pointer;
-  }
 
-.search-field:focus {
-    outline: none;
-  }
 
 .profile-bar {
     margin-right: 80px;
@@ -85,7 +69,17 @@
 
 @media only screen and (max-width:400px) {
 
-  .profile-bar, .search-field {
-    display: none;
+
+
+  .logout-btn {
+    right: 0px;
+    width: 20px;
+    height: 20px;
+  }
+  .profile-bar {
+    margin-right: 15px;
+  }
+  .title {
+    font-size: 20px;
   }
 }

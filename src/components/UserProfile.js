@@ -2,7 +2,7 @@ import './UserProfile.css'
 
 import Navbar from './Navbar'
 import NewPostForm from '../pages/home/NewPostForm'
-
+import { PostComments }from './PostComments'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { useEffect, useState } from "react"
 import { projectFirestore  } from "../firebase/config"
@@ -67,6 +67,9 @@ export default function UserProfile() {
                     ))}
 
                     </div>
+                    <div className="about-mobile-version">
+                        <UserAbout />
+                    </div>
                     <div className='edit-profile-btn'>
                         <button className="btn-edit" onClick={handleClick}>Edytuj profil</button>
                     </div>
@@ -79,8 +82,7 @@ export default function UserProfile() {
                
 
                 <div className='profile-content'>     
-                    <UserAbout />
-
+    
                     <div className='profile-post'>
 
                 {error && <p>{error}</p>}
@@ -102,31 +104,26 @@ export default function UserProfile() {
                     
                      <div className="post-data">
                         <p className="post-title">{post.postText}</p>
-                        {/* <div className="photo">
-                            <img src={postImg} alt="post" className="post-photo-size"/>
-                        </div> */}
+                   
                     <div className="like-section">
-                        <p><img src={likeIcon} alt="likes" /> {post.like_count}</p> <p>{post.comment} komentarzy</p>
+                        <p><img src={likeIcon} alt="likes" /> {post.like_count}</p> <p>{post.message.length} komentarzy</p>
                     </div>
                         
                     </div>
-                    <div className="like-comment-section">
-                        <p><img src={likeIcon} alt="likes" /> Lubię to!</p>
-                        <p><img src={commentIcon} alt="likes" /> Komentarz</p>
+                
+                    <div className="comment-section-post">
+                        
+                            {post.message?.map((list, index) => (
+                            <div className="comment-container" key={index}>
+                            <p className="comment-username">{list.comment_username}: </p>
+                            <p className="comment-text">{list.comment}</p>
+                           </div>
+                           ))}
+                     
+               </div>
+                    <div>
+                        <PostComments postKey={post.id} document={post.message}/> 
                     </div>
-                    <>
-                        <form className="comment-section">
-                            <label><img src={happy} alt="profile" /></label>
-                                <label>
-                                <input 
-                                    type="text"
-                                    className="comment-value"
-                                    placeholder="Napisz komentarz.."
-                                />
-                                </label>
-                        </form>
-                       
-                    </>
                 </div> 
            ))} 
 
