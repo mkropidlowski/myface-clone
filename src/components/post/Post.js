@@ -1,9 +1,9 @@
 import "./Post.css";
 import happy from "../../img/happy.png";
 import likeIcon from "../../img/like.png";
-import commentIcon from "../../img/comment.png";
 import { useEffect, useState } from "react";
 import { projectFirestore } from "../../firebase/config";
+import { PostComments } from "../postComments/PostComments";
 
 export default function Post() {
     const [data, setData] = useState(null);
@@ -55,27 +55,21 @@ export default function Post() {
                                 <p>
                                     <img src={likeIcon} alt="likes" /> {post.like_count}
                                 </p>{" "}
-                                <p>{post.comment} komentarzy</p>
+                                <p>{post.message.length} komentarzy</p>
                             </div>
                         </div>
-                        <div className="like-comment-section">
-                            <p>
-                                <img src={likeIcon} alt="likes" /> Lubię to!
-                            </p>
-                            <p>
-                                <img src={commentIcon} alt="likes" /> Komentarz
-                            </p>
+
+                        <div className="comment-section-post">
+                            {post.message?.map((list, index) => (
+                                <div className="comment-container" key={index}>
+                                    <p className="comment-username">{list.comment_username}: </p>
+                                    <p className="comment-text">{list.comment}</p>
+                                </div>
+                            ))}
                         </div>
-                        <>
-                            <form className="comment-section">
-                                <label>
-                                    <img src={happy} alt="profile" />
-                                </label>
-                                <label>
-                                    <input type="text" className="comment-value" placeholder="Napisz komentarz.." />
-                                </label>
-                            </form>
-                        </>
+                        <div>
+                            <PostComments postKey={post.id} document={post.message} />
+                        </div>
                     </div>
                 ))}
         </div>

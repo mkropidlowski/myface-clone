@@ -29,7 +29,5 @@ export const AuthContextProvider = ({ children }) => {
         });
     }, []);
 
-    console.log("cotext state", state);
-
     return <AuthContext.Provider value={{ ...state, dispatch }}>{children}</AuthContext.Provider>;
 };

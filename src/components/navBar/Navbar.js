@@ -15,9 +15,6 @@ export default function Navbar() {
                 <Link to={"/"}>
                     <span className="title">_mySpace</span>
                 </Link>
-                <span className="search">
-                    <input type="text" className="search-field" />
-                </span>
             </div>
             <div className="profile-bar">
                 <Link to={"/userprofile"}>

@@ -10,12 +10,12 @@
 }
 
 .form-box {
-    margin: 60px auto;       
+    margin: 60px auto;
 }
 
 .form-box label {
     display: flex;
-    margin: 25px auto;  
+    margin: 25px auto;
 }
 
 .form-box input {
@@ -24,13 +24,13 @@
     color: #777;
     width: 100%;
     border-radius: 5px;
-    border: 0; 
+    border: 0;
     padding-left: 15px;
 }
 
-.form-box input:focus{
+.form-box input:focus {
     outline: none;
-    color:black;
+    color: black;
 }
 
 .btn-register {
@@ -39,10 +39,10 @@
     width: 140px;
     border-radius: 4px;
     background: #0f8500;
-    color:#fff;
+    color: #fff;
     cursor: pointer;
     font-size: 0.9em;
-    margin-bottom: 25px;    
+    margin-bottom: 25px;
 }
 
 .btn-right-pos {
@@ -53,7 +53,7 @@
     padding-top: 10px;
     cursor: pointer;
     font-size: 0.9em;
-    border-bottom: 1px solid black;   
+    border-bottom: 1px solid black;
     position: relative;
-    top:30px 
+    top: 30px;
 }

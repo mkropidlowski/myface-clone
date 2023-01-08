@@ -2,7 +2,7 @@ import "./UserProfile.css";
 
 import Navbar from "../navBar/Navbar";
 import NewPostForm from "../../pages/home/components/NewPostForm";
-
+import { PostComments } from "../postComments/PostComments";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useEffect, useState } from "react";
 import { projectFirestore } from "../../firebase/config";
@@ -10,7 +10,6 @@ import { projectFirestore } from "../../firebase/config";
 import man from "../../img/man-2.png";
 import happy from "../../img/happy.png";
 import likeIcon from "../../img/like.png";
-import commentIcon from "../../img/comment.png";
 import { EditProfile } from "../editProfile/EditProfile";
 import UserAbout from "../userAbout/UserAbout";
 import { useCollection } from "../../hooks/useCollection";
@@ -63,6 +62,9 @@ export default function UserProfile() {
                                 </span>
                             ))}
                     </div>
+                    <div className="about-mobile-version">
+                        <UserAbout />
+                    </div>
                     <div className="edit-profile-btn">
                         <button className="btn-edit" onClick={handleClick}>
                             Edytuj profil
@@ -75,8 +77,6 @@ export default function UserProfile() {
                 </div>
 
                 <div className="profile-content">
-                    <UserAbout />
-
                     <div className="profile-post">
                         {error && <p>{error}</p>}
                         <div className="user-board-container">
@@ -101,35 +101,26 @@ export default function UserProfile() {
 
                                         <div className="post-data">
                                             <p className="post-title">{post.postText}</p>
+
                                             <div className="like-section">
                                                 <p>
                                                     <img src={likeIcon} alt="likes" /> {post.like_count}
                                                 </p>{" "}
-                                                <p>{post.comment} komentarzy</p>
+                                                <p>{post.message.length} komentarzy</p>
                                             </div>
                                         </div>
-                                        <div className="like-comment-section">
-                                            <p>
-                                                <img src={likeIcon} alt="likes" /> Lubię to!
-                                            </p>
-                                            <p>
-                                                <img src={commentIcon} alt="likes" /> Komentarz
-                                            </p>
+
+                                        <div className="comment-section-post">
+                                            {post.message?.map((list, index) => (
+                                                <div className="comment-container" key={index}>
+                                                    <p className="comment-username">{list.comment_username}: </p>
+                                                    <p className="comment-text">{list.comment}</p>
+                                                </div>
+                                            ))}
                                         </div>
-                                        <>
-                                            <form className="comment-section">
-                                                <label>
-                                                    <img src={happy} alt="profile" />
-                                                </label>
-                                                <label>
-                                                    <input
-                                                        type="text"
-                                                        className="comment-value"
-                                                        placeholder="Napisz komentarz.."
-                                                    />
-                                                </label>
-                                            </form>
-                                        </>
+                                        <div>
+                                            <PostComments postKey={post.id} document={post.message} />
+                                        </div>
                                     </div>
                                 ))}
                         </div>

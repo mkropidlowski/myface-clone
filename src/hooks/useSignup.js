@@ -26,8 +26,6 @@ export const useSignup = () => {
                 displayName: name,
                 surname,
             });
-
-            // dispatch login action
             dispatch({ type: "LOGIN", payload: res.user });
 
             if (!isCanceled) {

@@ -26,10 +26,10 @@ export default function NewPostForm({ uid }) {
             postText,
             like_count: 0,
             comment: 0,
+            message: [],
         });
     };
 
-    // reset the form fields
     useEffect(() => {
         if (response.success) {
             setPostText("");

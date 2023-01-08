@@ -1,17 +1,17 @@
 /* navbar styles */
 .navbar {
-    width: 100vw!important;
-    background: #FFFFFF;
+    width: 100vw !important;
+    background: #ffffff;
     padding: 15px 0 15px;
     box-shadow: 0 3px 3px -3px gray;
     display: flex;
     justify-content: space-between;
-    position:fixed;
-    top:0;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 1;
-  }
+}
 
 .title {
     margin-left: 30px;
@@ -19,24 +19,7 @@
     letter-spacing: 1px;
     font-size: 1.4em;
     cursor: pointer;
-  }
-<<<<<<< HEAD:src/components/navBar/Navbar.css
-.search-field {
-    margin-left: 50px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 15px;
-    background-color: white;
-    background-image: url('../../img/loupe.png');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;  
-    cursor: pointer;
-  }
-=======
->>>>>>> beda8fa05c0a419264f644e5ae31fd687973018c:src/components/Navbar.css
-
+}
 
 .profile-bar {
     margin-right: 80px;
@@ -51,11 +34,11 @@
     align-items: center;
     width: 120px;
     border-radius: 5px;
-    padding: 3px;   
+    padding: 3px;
 }
 
 .user-container:hover {
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     cursor: pointer;
     border-bottom-right-radius: 18px;
     border-bottom-left-radius: 18px;
@@ -64,8 +47,7 @@
 }
 
 .user-name {
-    font-size:1em;
-    
+    font-size: 1em;
 }
 .logout-btn {
     position: relative;
@@ -81,21 +63,16 @@
     border-radius: 50%;
 }
 
-
-
-@media only screen and (max-width:400px) {
-
-
-
-  .logout-btn {
-    right: 0px;
-    width: 20px;
-    height: 20px;
-  }
-  .profile-bar {
-    margin-right: 15px;
-  }
-  .title {
-    font-size: 20px;
-  }
+@media only screen and (max-width: 400px) {
+    .logout-btn {
+        right: 0px;
+        width: 20px;
+        height: 20px;
+    }
+    .profile-bar {
+        margin-right: 15px;
+    }
+    .title {
+        font-size: 20px;
+    }
 }
