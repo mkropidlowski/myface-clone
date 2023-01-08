@@ -3,7 +3,6 @@
     width:40%;
     position: relative;
     margin: auto;
-    
 }
 
 .post {
@@ -13,7 +12,6 @@
     margin-bottom: 50px;
     background: #ececec;
     border-radius: 9px;
-    
 }
 
 .header {
@@ -29,7 +27,6 @@
 
 .profile-name {
     padding-left: 10px;
-    
 }
 
 .author-info p {
@@ -115,7 +112,6 @@
     display: flex;
     align-items: center;
     margin: 15px auto; 
-
 }
 
 .comment-section label img {
@@ -142,8 +138,3 @@ hr {
     background: gray;
 }
 
-
-@media only screen and (max-width:400px) {
- 
-
-}

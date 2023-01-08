@@ -9,7 +9,6 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    
 }
 
 .popup h2 {
@@ -17,8 +16,6 @@
     display: flex;
     justify-content: space-between;
 }
-
-
 .update-profile {
     display: flex;
     flex-direction: column;
