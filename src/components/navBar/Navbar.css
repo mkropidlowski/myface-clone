@@ -20,6 +20,7 @@
     font-size: 1.4em;
     cursor: pointer;
   }
+<<<<<<< HEAD:src/components/navBar/Navbar.css
 .search-field {
     margin-left: 50px;
     box-sizing: border-box;
@@ -33,10 +34,9 @@
     padding: 12px 20px 12px 40px;  
     cursor: pointer;
   }
+=======
+>>>>>>> beda8fa05c0a419264f644e5ae31fd687973018c:src/components/Navbar.css
 
-.search-field:focus {
-    outline: none;
-  }
 
 .profile-bar {
     margin-right: 80px;
@@ -85,7 +85,17 @@
 
 @media only screen and (max-width:400px) {
 
-  .profile-bar, .search-field {
-    display: none;
+
+
+  .logout-btn {
+    right: 0px;
+    width: 20px;
+    height: 20px;
+  }
+  .profile-bar {
+    margin-right: 15px;
+  }
+  .title {
+    font-size: 20px;
   }
 }

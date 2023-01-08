@@ -23,11 +23,12 @@
 
 .header-profile {
     background-color: rgb(255, 255, 255);
-    height: 300px;
+    height: 500px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-direction: column;
 }
 
 .user {
@@ -52,7 +53,8 @@
 }
 
 .btn-edit {
-    margin-top: 150px;
+    position: relative;
+    top:-10px;
     width: 150px;
     padding: 8px;
     border: 0;
@@ -75,6 +77,7 @@
     padding: 15px;
 }
  /* POST */ 
+<<<<<<< HEAD:src/components/userProfile/UserProfile.css
 .post {
     display: flex;
     flex-direction: column;
@@ -85,122 +88,14 @@
 }
 
 .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-}
-.header span {
-    display: flex;
-}
-
-.profile-name {
-    padding-left: 10px;
-}
-
-.author-info p {
-    font-size: 0.7em;
-    color:gray;
-    margin-left: 5px;
-}
-
-.settings-btn {
-    font-size: 1.7em;
-    position: relative;
-    top: -10px;
-}
-
-.settings-btn:hover, .profile-name:hover {
-    cursor: pointer;
-}
-
-.post-data {
-    padding: 10px;
-}
-
-.post-title {
-    margin-bottom: 10px;
-    font-size: 1.0em;
-    padding: 15px;
-}
-
-.photo {
-    height: auto;
-}
-.post-photo-size {
-    width:100%
-}
-
-.like-section {
-    display: flex;
-    width: 90%;
-    margin: 10px auto;
-    justify-content: space-between;
-}
-
-.like-section p:nth-child(2) {
-    text-decoration: underline;
-}
-.like-section p:hover {
-    cursor: pointer;
-}
-
-.like-comment-section {
-    display: flex;
-    width: 90%;
-    margin: 10px auto;
-    justify-content: space-between;
-    border-top: 1px solid rgb(175, 175, 175);
-    border-bottom: 1px solid rgb(175, 175, 175);; 
-    padding: 5px 5px;
-}
-
-.like-comment-section p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 43%;
-    padding: 15px;
-    background-color: #ebebeb;
-    border-bottom-right-radius: 18px;
-    border-bottom-left-radius: 18px;
-    border-top-right-radius: 18px;
-    border-top-left-radius: 18px;
-}
-
-.like-comment-section p:hover {
-    cursor: pointer;
-    background-color: #dfdfdf;
-}
-
-.like-comment-section p img {
-    margin-right: 15px;
-}
+=======
 
 .comment-section {
+>>>>>>> beda8fa05c0a419264f644e5ae31fd687973018c:src/components/UserProfile.css
     display: flex;
     align-items: center;
     margin: 15px auto; 
 
-}
-
-.comment-section label img {
-    width: 30px;
-    height: 30px;
-    margin-right: 20px;
-}
-
-.comment-value {
-    width: 450px;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
-.comment-value:focus {
-    outline: none;
 }
 
 hr {
@@ -208,6 +103,7 @@ hr {
     height: 0.5px;
     background: gray;
 }
+
 
 .popup-container {
     width:100vw !important;
@@ -217,3 +113,56 @@ hr {
     align-items: center;
 }
 
+
+@media only screen and (max-width:400px) {
+
+.header-profile {
+    flex-direction: column;
+    height: 500px;
+    
+
+}
+.user-info {
+    position: relative;
+    flex-direction: column;
+    top:0px;
+}
+
+.user {
+    font-size:25px;
+}
+
+.btn-edit {
+   position: relative;
+   top:-25px;
+}
+
+.about {
+    display: block;
+    position: relative;
+    top:-30px;
+}
+
+.about h2 {
+    font-size: 20px;
+}
+
+.about ul li {
+    font-size: 15px;
+}
+
+<<<<<<< HEAD:src/components/userProfile/UserProfile.css
+.popup-container {
+    width:100vw !important;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+=======
+
+>>>>>>> beda8fa05c0a419264f644e5ae31fd687973018c:src/components/UserProfile.css
+
+  
+  }
+  

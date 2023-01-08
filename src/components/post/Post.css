@@ -1,6 +1,6 @@
 .board-container {
     height: 100%;
-    width:40%;
+    width:20%;
     position: relative;
     margin: auto;
 }
@@ -12,6 +12,11 @@
     margin-bottom: 50px;
     background: #ececec;
     border-radius: 9px;
+<<<<<<< HEAD:src/components/post/Post.css
+=======
+    width: 600px;
+    
+>>>>>>> beda8fa05c0a419264f644e5ae31fd687973018c:src/components/Post.css
 }
 
 .header {
@@ -67,6 +72,9 @@
     width: 90%;
     margin: 10px auto;
     justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid rgb(175, 175, 175);
+    border-bottom: 1px solid rgb(175, 175, 175);
 }
 
 .like-section p:nth-child(2) {
@@ -76,45 +84,45 @@
     cursor: pointer;
 }
 
-.like-comment-section {
+.comment-container {
     display: flex;
-    width: 90%;
-    margin: 10px auto;
-    justify-content: space-between;
-    border-top: 1px solid rgb(175, 175, 175);
-    border-bottom: 1px solid rgb(175, 175, 175);; 
-    padding: 5px 5px;
+    width:90%;
+    margin-top: 8px;
+    
+
 }
 
-.like-comment-section p {
+.comment-username {
+    padding: 10px;
+    font-weight: bold;
+    
+}
+
+.comment-text {
+    border-radius: 5px;
+    background: rgb(188, 198, 207);
+    padding: 10px;
+}
+
+.comment-section-post {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 43%;
-    padding: 15px;
-    background-color: #ebebeb;
-    border-bottom-right-radius: 18px;
-    border-bottom-left-radius: 18px;
-    border-top-right-radius: 18px;
-    border-top-left-radius: 18px;
+    justify-content: left;
+    margin: 15px; 
+    flex-direction: column;
+    
 }
 
-.like-comment-section p:hover {
-    cursor: pointer;
-    background-color: #dfdfdf;
-}
-
-.like-comment-section p img {
-    margin-right: 15px;
-}
-
-.comment-section {
+.comment-section-form {
     display: flex;
     align-items: center;
+<<<<<<< HEAD:src/components/post/Post.css
     margin: 15px auto; 
+=======
+    margin: 15px; 
+>>>>>>> beda8fa05c0a419264f644e5ae31fd687973018c:src/components/Post.css
 }
 
-.comment-section label img {
+.comment-section-form label img {
     width: 30px;
     height: 30px;
     margin-right: 20px;
@@ -138,3 +146,33 @@ hr {
     background: gray;
 }
 
+<<<<<<< HEAD:src/components/post/Post.css
+=======
+
+@media only screen and (max-width:400px) {
+ 
+.board-container {
+    width: 100%;   
+}
+
+.post {
+    width: 95%;
+    margin: 25px auto;
+    padding: 0;
+}
+
+.header {
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.like-section  {
+    font-size:15px
+}
+.comment-section-post {
+    font-size: 15px;
+}
+.comment-value {
+    width: 210px;
+}
+}
+>>>>>>> beda8fa05c0a419264f644e5ae31fd687973018c:src/components/Post.css
