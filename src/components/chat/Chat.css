@@ -1,4 +1,3 @@
-
 .chat-container ul {
     padding: 20px;
     position: relative;
@@ -6,7 +5,6 @@
     width: 250px;
     display: flex;
     flex-direction: column;
-  
 }
 
 .chat-container ul li {
@@ -21,7 +19,6 @@
 }
 
 .chat-container ul li img {
-    
     background: lightgray;
     border-radius: 50%;
 }
@@ -34,13 +31,10 @@
     border-top-left-radius: 10px;
 }
 
-
 @media only screen and (max-width:400px) {
-
     .chat-container {
         display: none;
     }
-
 }
 
 

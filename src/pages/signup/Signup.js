@@ -1,76 +1,78 @@
-import './Signup.css'
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import { useSignup } from '../../hooks/useSignup'
+import "./Signup.css";
+import React from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useSignup } from "../../hooks/useSignup";
 
 export default function Signup() {
-    
-    const [name, setName] = useState('')
-    const [surname, setSurname] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const { signup, isPending, error } = useSignup()
-    
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const { signup, isPending, error } = useSignup();
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        signup(email, password, name, surname)
-    }
+        e.preventDefault();
+        signup(email, password, name, surname);
+    };
 
     return (
         <div className="box">
             <h1>_mySpace</h1>
             <form onSubmit={handleSubmit} className="form-box">
                 <label>
-                    <input 
+                    <input
                         type="text"
-                        onChange={(e) => setName(e.target.value) }
+                        onChange={(e) => setName(e.target.value)}
                         value={name}
                         required
                         placeholder="Imię"
                     />
                 </label>
                 <label>
-                    <input 
+                    <input
                         type="text"
-                        onChange={(e) => setSurname(e.target.value) }
+                        onChange={(e) => setSurname(e.target.value)}
                         value={surname}
                         required
                         placeholder="Nazwisko"
                     />
                 </label>
                 <label>
-                    <input 
+                    <input
                         type="text"
-                        onChange={(e) => setEmail(e.target.value) }
+                        onChange={(e) => setEmail(e.target.value)}
                         value={email}
                         required
                         placeholder="E-mail"
                     />
                 </label>
                 <label>
-                    <input 
+                    <input
                         type="password"
-                        onChange={(e) => setPassword(e.target.value) }
+                        onChange={(e) => setPassword(e.target.value)}
                         value={password}
                         required
                         placeholder="Hasło"
                     />
                 </label>
-                
+
                 <span className="btn-right-pos">
-                    {!isPending && <button className="btn-register">Załóż konto</button> }
-                    {isPending && <button className="btn-register" disabled>Trwa rejestracja...</button>}
-                    { error && <p>{error}</p>}  
+                    {!isPending && <button className="btn-register">Załóż konto</button>}
+                    {isPending && (
+                        <button className="btn-register" disabled>
+                            Trwa rejestracja...
+                        </button>
+                    )}
+                    {error && <p>{error}</p>}
                 </span>
-                 
-                    <p><Link to="/" className="return-btn">Powrót do strony logowania..</Link></p>
-                
-                </form>
+
+                <p>
+                    <Link to="/" className="return-btn">
+                        Powrót do strony logowania..
+                    </Link>
+                </p>
+            </form>
         </div>
-    )
+    );
 }
-
-    
-

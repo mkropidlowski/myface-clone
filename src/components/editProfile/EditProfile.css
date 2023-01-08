@@ -1,15 +1,14 @@
 .popup {
-    width:600px;
+    width: 600px;
     height: 400px;
     background-color: rgb(209, 209, 209);
     position: fixed;
-    top:250px;
+    top: 250px;
     z-index: 11;
     border-radius: 1%;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    
 }
 
 .popup h2 {
@@ -17,7 +16,6 @@
     display: flex;
     justify-content: space-between;
 }
-
 
 .update-profile {
     display: flex;
@@ -39,16 +37,16 @@
     width: 100px;
     border-radius: 4px;
     background: rgb(216, 140, 0);
-    color:#000;
+    color: #000;
     cursor: pointer;
-    font-size: 0.9em; 
-    margin:15px;
+    font-size: 0.9em;
+    margin: 15px;
 }
 
 .exit-btn {
     background-color: rgb(255, 55, 55);
-    border:0;
-    color:#fff;
+    border: 0;
+    color: #fff;
     padding: 5px;
     border-radius: 50%;
     width: 30px;
@@ -56,27 +54,23 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width:400px) {
-
-.popup {
-    width: 90%;
-  }
-.popup h2 {
-    padding: 5px;
-    font-size: 20px;
-    width:93%;
-    margin-top: 10px;
-  }
-.exit-btn {
-    border-radius: 50%;
-    width: 45px;
-    justify-content: space-evenly;
+@media only screen and (max-width: 400px) {
+    .popup {
+        width: 90%;
+    }
+    .popup h2 {
+        padding: 5px;
+        font-size: 20px;
+        width: 93%;
+        margin-top: 10px;
+    }
+    .exit-btn {
+        border-radius: 50%;
+        width: 45px;
+        justify-content: space-evenly;
+    }
+    .update-profile {
+        margin-left: 20px;
+        width: 250px;
+    }
 }
-.update-profile {
-    margin-left: 20px;
-    width: 250px;
-}
-}
-    
-
-      
